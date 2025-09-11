@@ -1,0 +1,73 @@
+import random as rd
+
+print("Bem-vindo ao Campo de Batalha!!")
+vilao = {"nome": "lucifer", "vida": 500, "ataque": 25, "defesa": 40}
+
+
+def game():
+    print("------Batalha iniciada!------\n")
+    while heroi["vida"] > 0 and vilao["vida"] > 0:
+        choise = input(
+            f"O {vilao['nome']} está na sua frente! o que deseja fazer?\nAtacar[1] | Defender[2] | Fugir[3] | end game [0]: "
+        )
+        if choise == "0":
+            print("Obrigado por ter jogado!")
+            break
+        elif choise.lower() == "1":
+            chance_ataque = rd.randint(1, 4)
+            if chance_ataque == 1:
+                dano_total = heroi["ataque"] - vilao["defesa"]
+                vilao["vida"] -= heroi["ataque"] - vilao["defesa"]
+                print(
+                    f"O dano dado foi de: {dano_total}\n{vilao['nome']} agora tem {vilao['vida']} hp"
+                )
+                continue
+            else:
+                novo_hp = heroi["vida"] + heroi["defesa"] - vilao["ataque"]
+                print(
+                    f"------Errooou ataque! {vilao['nome']} lhe contra-atacou!\nNovo hp do heroi: {novo_hp}------\n"
+                )
+        elif choise.lower() == "2":
+            chance_defesa = rd.randint(1, 3)
+            if chance_defesa == 1:
+                heroi["vida"] += 5
+                print(
+                    f"------Defesa efetuada com sucesso! [ganho de mais 5 de hp!]\nNovo hp: {heroi["vida"]}------\n"
+                )
+                continue
+            else:
+                heroi["vida"] *= 95 / 100
+                print(
+                    f"------Defesa falhouuuuu! o Boss levou 5% hp!\nNovo hp: {heroi["vida"]}------\n"
+                )
+                continue
+
+        elif choise.lower() == "3":
+            chance_fugir = rd.randint(1, 5)
+            if chance_fugir == 1:
+                print("------Você fugiu com sucesso!------")
+                break
+            else:
+                print(
+                    "------Você não conseguiu fugir... o boss lhe acertou de raspão levando 10% hp!------\n"
+                )
+                heroi["vida"] *= 90 / 100
+                continue
+
+
+while True:
+    heroi = {}
+    nome_heroi_str = input("Digite o nome de seu heroi!\n")
+    confirmar_nome = input(
+        f"Deseja confirmar o nome de seu heroi: ({nome_heroi_str}) [S/N]?\n"
+    )
+    if confirmar_nome.lower() == "s":
+        print("iniciando batalha...")
+        heroi["nome"] = nome_heroi_str
+        heroi["vida"] = 100
+        heroi["ataque"] = 50
+        heroi["defesa"] = 20
+        game()
+        break
+    else:
+        continue

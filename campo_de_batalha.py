@@ -24,6 +24,7 @@ def game():
                 continue
             else:
                 novo_hp = heroi["vida"] + heroi["defesa"] - vilao["ataque"]
+                heroi["vida"] = novo_hp
                 print(
                     f"------Errooou ataque! {vilao['nome']} lhe contra-atacou!\nNovo hp do heroi: {novo_hp}------\n"
                 )

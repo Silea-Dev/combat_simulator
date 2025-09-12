@@ -1,6 +1,7 @@
 import random as rd
 
 print("Bem-vindo ao Campo de Batalha!!")
+VILAO = {"nome": "lucifer", "vida": 500, "ataque": 25, "defesa": 40}
 
 
 def game(heroi, vilao):

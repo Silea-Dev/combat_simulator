@@ -1,5 +1,6 @@
 from core import game
 
+vilao = {"nome": "lucifer", "vida": 500, "ataque": 25, "defesa": 40}
 while True:
     heroi = {}
     nome_heroi_str = input("Digite o nome de seu heroi!\n")
@@ -12,7 +13,7 @@ while True:
         heroi["vida"] = 100
         heroi["ataque"] = 50
         heroi["defesa"] = 20
-        game()
+        game(heroi, vilao)
         break
     else:
         continue

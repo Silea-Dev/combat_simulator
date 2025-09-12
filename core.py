@@ -1,10 +1,9 @@
 import random as rd
 
 print("Bem-vindo ao Campo de Batalha!!")
-vilao = {"nome": "lucifer", "vida": 500, "ataque": 25, "defesa": 40}
 
 
-def game():
+def game(heroi, vilao):
     print("------Batalha iniciada!------\n")
     if heroi["vida"] > 0 and vilao["vida"] > 0:
         while True:
@@ -59,21 +58,3 @@ def game():
         print("Game over! É uma pena... mas tente novamente!")
     elif vilao["vida"] <= 0:
         print(f"PARABÉNS! Você derrotou {vilao['nome']}")
-
-
-while True:
-    heroi = {}
-    nome_heroi_str = input("Digite o nome de seu heroi!\n")
-    confirmar_nome = input(
-        f"Deseja confirmar o nome de seu heroi: ({nome_heroi_str}) [S/N]?\n"
-    )
-    if confirmar_nome.lower() == "s":
-        print("iniciando batalha...")
-        heroi["nome"] = nome_heroi_str
-        heroi["vida"] = 100
-        heroi["ataque"] = 50
-        heroi["defesa"] = 20
-        game()
-        break
-    else:
-        continue

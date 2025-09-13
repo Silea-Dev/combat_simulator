@@ -1,4 +1,4 @@
-# Simulador de Batalha
+# Combat Simulator
 
 Um mini-jogo de RPG de texto, criado em Python puro, onde um herói customizável enfrenta um vilão pré-definido. O jogo utiliza uma mecânica de turnos e probabilidades para determinar o vencedor da batalha, oferecendo ao jogador opções de ataque, defesa e fuga.
 
@@ -14,12 +14,12 @@ Este projeto foi desenvolvido como um exercício prático para aplicar os concei
 1. **Clone o repositório:**
 
    ```bash
-   git clone [https://github.com/Silea-dev/game.git](https://github.com/Silea-dev/game.git)
+   git clone [https://github.com/Silea-dev/combat_simulator.git](https://github.com/Silea-dev/combat_simulator.git)
    ```
 2. **Navegue até a pasta do projeto:**
 
    ```bash
-   cd game
+   cd combat_simulator
    ```
 3. **(Opcional, mas recomendado) Crie e ative um ambiente virtual:**
 

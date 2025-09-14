@@ -1,7 +1,74 @@
 import random as rd
 
 print("Bem-vindo ao Campo de Batalha!!")
-vilao = {"nome": "lucifer", "vida": 500, "ataque": 25, "defesa": 40}
+vilao = {
+    "nome": "lucifer",
+    "classe": "demônio",
+    "nivel": 100,
+    "vida": 2000,
+    "ataque": 200,
+    "defesa": 150,
+    "altura": 5,
+    "pet": "dragão",
+}
+heroi = {}
+
+
+def coleta_dados():
+    while True:
+        nome_str = input("Digite o nome de seu personagem: ")
+        classe_str = input("Digite a classe de seu personagem: ")
+        nivel_str = input("Digite o nível de seu personagem: ")
+        hp_str = input("Digite os pontos de vida de seu personagem: ")
+        defesa_str = input("Digite os pontos de defesa de seu personagem: ")
+        ataque_str = input("Digite o dano de ataque base de seu personagem: ")
+        altura_str = input("Digite a altura (em metros) de seu personagem: ")
+        pet_str = input("Seu personagem possuí algum pet [S/N]?\n")
+        confirmar_ficha = input(
+            f"Deseja confirmar os dados:\n Nome: {nome_str}\n Classe: {classe_str}\n Nível: {nivel_str}\nVida: {hp_str}\n Dano: {ataque_str}\n Altura: {altura_str}\n Pet: {pet_str}\n[S/N]?\n "
+        )
+        if confirmar_ficha.lower() == "n":
+            print("Refaça a lista [e garanta de preencher todos os dados!]")
+            continue
+        elif confirmar_ficha.lower() == "s":
+            ficha_validada = validar_criar_ficha(
+                nome_str,
+                classe_str,
+                nivel_str,
+                hp_str,
+                defesa_str,
+                ataque_str,
+                altura_str,
+                pet_str,
+            )
+            if ficha_validada is not None:
+                return ficha_validada
+            else:
+                print("[ERROR] níveis, dano, vida, são todos números inteiros!")
+
+
+def validar_criar_ficha(
+    nome_str,
+    classe_str,
+    nivel_str,
+    hp_str,
+    defesa_str,
+    ataque_str,
+    altura_str,
+    pet_str,
+):
+    try:
+        heroi["nome"] = nome_str
+        heroi["classe"] = classe_str
+        heroi["nivel"] = int(nivel_str)
+        heroi["vida"] = int(hp_str)
+        heroi["ataque"] = int(ataque_str)
+        heroi["defesa"] = int(defesa_str)
+        heroi["altura"] = float(altura_str)
+        heroi["pet"] = "sim" if pet_str.lower() == "s" else "não"
+        return heroi
+    except ValueError:
+        return None
 
 
 def game():
@@ -63,63 +130,3 @@ def game():
             return print("Game over! É uma pena... mas tente novamente!")
         elif vilao["vida"] <= 0 and heroi["vida"] > 0:
             return print(f"PARABÉNS! Você derrotou {vilao['nome']}")
-
-
-heroi = {}
-
-
-def coleta_dados():
-    while True:
-        nome_str = input("Digite o nome de seu personagem: ")
-        classe_str = input("Digite a classe de seu personagem: ")
-        nivel_str = input("Digite o nível de seu personagem: ")
-        hp_str = input("Digite os pontos de vida de seu personagem: ")
-        defesa_str = input("Digite os pontos de defesa de seu personagem: ")
-        dano_base_str = input("Digite o dano de ataque base de seu personagem: ")
-        altura_str = input("Digite a altura (em metros) de seu personagem: ")
-        pet_str = input("Seu personagem possuí algum pet [S/N]?\n")
-        confirmar_ficha = input(
-            f"Deseja confirmar os dados:\n Nome: {nome_str}\n Classe: {classe_str}\n Nível: {nivel_str}\nVida: {hp_str}\n Dano: {dano_base_str}\n Altura: {altura_str}\n Pet: {pet_str}\n[S/N]?\n "
-        )
-        if confirmar_ficha.lower() == "n":
-            print("Refaça a lista [e garanta de preencher todos os dados!]")
-            continue
-        elif confirmar_ficha.lower() == "s":
-            ficha_validada = validar_criar_ficha(
-                nome_str,
-                classe_str,
-                nivel_str,
-                hp_str,
-                defesa_str,
-                dano_base_str,
-                altura_str,
-                pet_str,
-            )
-            if ficha_validada is not None:
-                return ficha_validada
-            else:
-                print("[ERROR] níveis, dano, vida, são todos números inteiros!")
-
-
-def validar_criar_ficha(
-    nome_str,
-    classe_str,
-    nivel_str,
-    hp_str,
-    defesa_str,
-    dano_base_str,
-    altura_str,
-    pet_str,
-):
-    try:
-        heroi["nome"] = nome_str
-        heroi["classe"] = classe_str
-        heroi["nivel"] = int(nivel_str)
-        heroi["vida"] = int(hp_str)
-        heroi["defesa"] = int(defesa_str)
-        heroi["ataque"] = int(dano_base_str)
-        heroi["altura"] = float(altura_str)
-        heroi["pet"] = "sim" if pet_str.lower() == "s" else "não"
-        return heroi
-    except ValueError:
-        return None

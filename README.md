@@ -53,3 +53,10 @@ Este projeto foi um campo de testes para aplicar e solidificar os seguintes conc
   O código é organizado com uma clara "Separação de Responsabilidades", onde `main.py` cuida da inicialização e da interação com o usuário, enquanto `core.py` contém toda a lógica e as regras do jogo.
 * **Funções e Passagem de Parâmetros:**
   A lógica principal é encapsulada na função `game()`, que recebe os dados dos combatentes como parâmetros, tornando o código reutilizável e fácil de testar.
+
+
+## Atualização
+
+Utilizando pandas, e um novo paradigma, foi adicionado uma `Ficha de Personagem` ao jogo! (13/09/2025)
+
+``Versão atual: V2.0``

@@ -7,5 +7,5 @@ venv/
 .vscode/
 .idea/
 
-teste/
-ambiente.py
+tests/
+teste_core.py

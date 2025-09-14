@@ -88,7 +88,7 @@ def game():
                     print(f"{vilao['nome']} agora tem {vilao['vida']} de hp")
                     continue
                 else:
-                    dano_verdadeiro = heroi["defesa"] - vilao["ataque"]
+                    dano_verdadeiro = heroi["defesa"] - vilao["ataque"] * 1.02
                     if dano_verdadeiro < 0:
                         novo_hp = heroi["vida"] + dano_verdadeiro
                         heroi["vida"] = novo_hp
@@ -103,13 +103,13 @@ def game():
             elif choise.lower() == "2":
                 chance_defesa = rd.randint(1, 3)
                 if chance_defesa == 1:
-                    heroi["vida"] += 5
+                    heroi["vida"] *= 105 / 100
                     print(
-                        f"------Defesa efetuada com sucesso! [ganho de mais 5 de hp!]\nNovo hp: {heroi["vida"]}------\n"
+                        f"------Defesa efetuada com sucesso! [ganho de mais 5/100 de hp!]\nNovo hp: {heroi["vida"]}------\n"
                     )
                     continue
                 else:
-                    heroi["vida"] *= 95 / 100
+                    heroi["vida"] *= 80 / 100
                     print(
                         f"------Defesa falhouuuuu! o Boss levou 5% hp!\nNovo hp: {heroi["vida"]}------\n"
                     )
@@ -124,7 +124,7 @@ def game():
                     print(
                         "------Você não conseguiu fugir... o boss lhe acertou de raspão levando 10% hp!------\n"
                     )
-                    heroi["vida"] *= 90 / 100
+                    heroi["vida"] *= 95 / 100
                     continue
         elif heroi["vida"] <= 0 and vilao["vida"] > 0:
             return print("Game over! É uma pena... mas tente novamente!")

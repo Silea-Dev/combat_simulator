@@ -144,9 +144,9 @@ vilao = {
     "classe": "demônio",
     # "altura": rd.randint(5, 10),
     "nivel": 100,
-    "vida": 2000,
-    "ataque": 200,
-    "defesa": 150,
+    "vida": 500,
+    "ataque": 1,
+    "defesa": 1,
     "pet": "dragão",
 }
 
@@ -253,13 +253,17 @@ def acao(escolha):
         return "fugir"
 
 
+# def acao_inimigo():
+
+
 # core
-def game(naosei):
+def game():
     print("------Batalha iniciada!------\n")
+
     while True:
         if verificar_vida(HEROI_COPIADO, VILAO_COPIADO) == "continua":
             escolha = input(
-                f"O {vilao['nome']} está na sua frente! o que deseja fazer?\nAtacar[1] | Defender[2] | Fugir[3] | end game [0]: "
+                f"O {vilao['nome']} está na sua frente! o que deseja fazer?\nAtacar[1] | Defender[2] | Fugir[3] | end game[0]: "
             )
             if acao(escolha) == "exit":
                 print("Obrigado por ter jogado!")
@@ -267,34 +271,37 @@ def game(naosei):
             elif acao(escolha) == "ataque":
                 chance_ataque = rd.randint(1, 4)
                 if chance_ataque == 1:
-                    VILAO_COPIADO["vida"] -= HEROI_COPIADO["ataque"] - VILAO_COPIADO    ["defesa"]
-                    print(f"{vilao['nome']} agora tem {vilao['vida']} de hp")
+                    VILAO_COPIADO["vida"] -= (
+                        HEROI_COPIADO["ataque"] - VILAO_COPIADO["defesa"]
+                    )
+                    print(
+                        f"{VILAO_COPIADO['nome']} agora tem {VILAO_COPIADO['vida']} de hp"
+                    )
                     continue
                 else:
-                    dano_verdadeiro = heroi["defesa"] - vilao["ataque"]
+                    dano_verdadeiro = HEROI_COPIADO["defesa"] - VILAO_COPIADO["ataque"]
                     if dano_verdadeiro < 0:
-                        novo_hp = heroi["vida"] + dano_verdadeiro
-                        heroi["vida"] = novo_hp
+                        novo_hp = HEROI_COPIADO["vida"] + dano_verdadeiro
+                        HEROI_COPIADO["vida"] = novo_hp
                     else:
                         print(
-                            f"O {vilao['nome']}o não teve dano para te atacar... nossa..."
+                            f"O {VILAO_COPIADO['nome']}o não teve dano para te atacar... nossa..."
                         )
-
                     print(
-                        f"------Errooou ataque! {vilao['nome']} lhe contra-atacou!\nNovo hp do heroi: {heroi['vida']}------\n"
+                        f"------Errooou ataque! {VILAO_COPIADO['nome']} lhe contra-atacou!\nNovo hp do heroi: {HEROI_COPIADO['vida']}------\n"
                     )
             elif escolha.lower() == "2":
                 chance_defesa = rd.randint(1, 3)
                 if chance_defesa == 1:
-                    heroi["vida"] += 5
+                    HEROI_COPIADO["vida"] += 5
                     print(
                         f"------Defesa efetuada com sucesso! [ganho de mais 5 de hp!]\nNovo hp: {heroi["vida"]}------\n"
                     )
                     continue
                 else:
-                    heroi["vida"] *= 95 / 100
+                    HEROI_COPIADO["vida"] *= 95 / 100
                     print(
-                        f"------Defesa falhouuuuu! o Boss levou 5% hp!\nNovo hp: {heroi["vida"]}------\n"
+                        f"------Defesa falhouuuuu! o Boss levou 5% hp!\nNovo hp: {HEROI_COPIADO["vida"]}------\n"
                     )
                     continue
 
@@ -307,12 +314,12 @@ def game(naosei):
                     print(
                         "------Você não conseguiu fugir... o boss lhe acertou de raspão levando 10% hp!------\n"
                     )
-                    heroi["vida"] *= 90 / 100
+                    HEROI_COPIADO["vida"] *= 90 / 100
                     continue
-        elif heroi["vida"] <= 0 and vilao["vida"] > 0:
+        elif HEROI_COPIADO["vida"] <= 0 and VILAO_COPIADO["vida"] > 0:
             return print("Game over! É uma pena... mas tente novamente!")
-        elif vilao["vida"] <= 0 and heroi["vida"] > 0:
-            return print(f"PARABÉNS! Você derrotou {vilao['nome']}")
+        elif VILAO_COPIADO["vida"] <= 0 and HEROI_COPIADO["vida"] > 0:
+            return print(f"PARABÉNS! Você derrotou {VILAO_COPIADO['nome']}")
 
 
 print("-----Jogo iniciado!-----")
@@ -323,37 +330,14 @@ if __name__ == "__main__":
     heroi_escolhido = classe_escolhida(dados)
     if heroi_escolhido is not None:
         HEROI_COPIADO = heroi_escolhido.copy()
-        VILAO_COPIADO = vilao.copy
+        VILAO_COPIADO = vilao.copy()
+        print(HEROI_COPIADO)
     else:
         print("escolha uma classe!")
+
     verificar_vida(HEROI_COPIADO, VILAO_COPIADO)
     naosei = verificar_vida(HEROI_COPIADO, VILAO_COPIADO)
+    game()
 
-    while True:
-        saida = input("Deseja criar uma ficha de personagem[S/N]?\n")
-        if saida.lower() == "s":
-            nova_ficha = solicita_dados()
-            confirmar_ficha = input(
-                f"Deseja confirmar os dados:\n Nome: {nome_str}\n Classe: {classe_str}[S/N]?\n "
-            )
-            if confirmar_ficha.lower() == "n":
-                print("Refaça a lista [e garanta de preencher todos os dados!]")
-            elif confirmar_ficha.lower() == "s":
-                ficha_validada = validar_criar_ficha(
-                    nome_str,
-                    classe_str,
-                )
-                if ficha_validada is not None:
-                    return ficha_validada
-                else:
-                    print("[ERROR] níveis, dano, vida, são todos números inteiros!")
-            print(heroi)
-            game()
-            break
-        elif saida.lower() == "n":
-            print("Sem ficha, sem jogo. Volte quando quiser realmente jogar!")
-            break
-        else:
-            continue
 
 """

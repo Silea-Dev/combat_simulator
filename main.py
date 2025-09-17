@@ -20,14 +20,15 @@ if __name__ == "__main__":
         escolha = input(
             f"O {cr.vilao['nome']} está na sua frente! o que deseja fazer?\nAtacar[1] | Defender[2] | Fugir[3] | end game[0]: "
         )
-        if escolha in cr.escolhas:
+        if escolha == "0":
+            break
+        elif escolha in cr.escolhas:
             vida_atual = cr.verificar_vida(HEROI_COPIADO, VILAO_COPIADO)
             if vida_atual == "continua":
                 HEROI_COPIADO, VILAO_COPIADO, mensagem = cr.processar_turno(
                     HEROI_COPIADO, VILAO_COPIADO, escolha
                 )
                 print(mensagem)
-
             # CONDIÇÃO DE VITÓRIA
             elif cr.verificar_vida(HEROI_COPIADO, VILAO_COPIADO) == "derrota":
                 print("Game over! É uma pena... mas tente novamente!")

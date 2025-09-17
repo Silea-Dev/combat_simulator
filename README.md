@@ -54,9 +54,14 @@ Este projeto foi um campo de testes para aplicar e solidificar os seguintes conc
 * **Funções e Passagem de Parâmetros:**
   A lógica principal é encapsulada na função `game()`, que recebe os dados dos combatentes como parâmetros, tornando o código reutilizável e fácil de testar.
 
+## Atualização
+
+Um novo paradigma, foi adicionado uma `Ficha de Personagem` ao jogo! (13/09/2025)
+
+``Versão: V2.0``
 
 ## Atualização
 
-Utilizando pandas, e um novo paradigma, foi adicionado uma `Ficha de Personagem` ao jogo! (13/09/2025)
+Adiconado sistema de escolha de classes! (17/09/2025)
 
-``Versão atual: V2.0``
+``Versão: V3.0``

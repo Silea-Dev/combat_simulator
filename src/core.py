@@ -2,9 +2,6 @@ import random as rd
 
 classes = ["espadachim", "mago", "curandeiro", "arqueiro"]
 escolhas = ["1", "2", "3", "0"]
-VILAO_COPIADO = None
-HEROI_COPIADO = None
-print("Bem-vindo ao Campo de Batalha!!")
 vilao = {
     "nome": "lucifer",
     "classe": "demônio",
@@ -14,6 +11,9 @@ vilao = {
     "defesa": 10,
     "pet": "dragão",
 }
+
+VILAO_COPIADO = None
+HEROI_COPIADO = None
 
 
 def solicita_dados():
@@ -84,17 +84,6 @@ def classe_escolhida(classe_str):
             return curandeiro(classe_str)
     else:
         return None
-
-
-def copias_H_V():
-    dados = solicita_dados()
-    heroi_escolhido = classe_escolhida(dados)
-    if heroi_escolhido is not None:
-        HEROI_COPIADO = heroi_escolhido.copy()
-        VILAO_COPIADO = vilao.copy()
-        heroi_hp = HEROI_COPIADO["vida"]
-        vilao_hp = VILAO_COPIADO["vida"]
-        return heroi_hp, vilao_hp
 
 
 def verificar_vida():

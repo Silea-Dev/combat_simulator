@@ -86,20 +86,13 @@ def classe_escolhida(classe_str):
         return None
 
 
-def verificar_vida():
-    if HEROI_COPIADO["vida"] > 0 and VILAO_COPIADO["vida"] > 0:
+def verificar_vida(heroi, vilao):
+    if heroi["vida"] > 0 and vilao["vida"] > 0:
         return "continua"
-    elif VILAO_COPIADO["vida"] <= 0 and HEROI_COPIADO["vida"] > 0:
+    elif vilao["vida"] <= 0 and heroi["vida"] > 0:
         return "vitoria"
-    elif HEROI_COPIADO["vida"] <= 0 and VILAO_COPIADO["vida"] > 0:
+    elif heroi["vida"] <= 0 and vilao["vida"] > 0:
         return "derrota"
-
-
-def condicao_vitoria(heroi_hp, vilao_hp):
-    if verificar_vida(heroi_hp, vilao_hp):
-        return True
-    else:
-        return False
 
 
 def acao(escolha):
@@ -111,3 +104,47 @@ def acao(escolha):
         return "defesa"
     elif escolha.lower() == "3":
         return "fugir"
+
+
+def processar_turno(heroi, vilao, escolha):
+
+    novo_heroi = heroi.copy()
+    novo_vilao = vilao.copy()
+    mensagem_turno = ""
+
+    acao_str = acao(escolha)
+
+    if acao_str == "ataque":
+        ataque_rd = rd.randint(1, 4)
+        if ataque_rd == 1:
+            dano = novo_heroi["ataque"] - novo_vilao["defesa"]
+            dano = max(0, dano)
+            novo_vilao["vida"] -= dano
+            mensagem_turno = f"Você acertou um ataque crítico! {novo_vilao['nome']} perdeu {dano} de vida."
+        else:
+            dano_contra_ataque = novo_vilao["ataque"] - novo_heroi["defesa"]
+            dano_contra_ataque = max(0, dano_contra_ataque)
+            novo_heroi["vida"] -= dano_contra_ataque
+            mensagem_turno = f"Você errou o ataque! {novo_vilao['nome']} contra-atacou, causando {dano_contra_ataque} de dano."
+
+    elif acao_str == "defesa":
+        defesa_rd = rd.randint(1, 3)
+        if defesa_rd == 1:
+            novo_heroi["vida"] += 5
+            mensagem_turno = f"Defesa bem-sucedida! Você recuperou 5 de vida."
+        else:
+            dano_recebido = novo_heroi["vida"] * 0.05
+            novo_heroi["vida"] -= dano_recebido
+            mensagem_turno = f"Sua defesa falhou! Você foi atingido e perdeu {dano_recebido:.0f} de vida."
+
+    elif acao_str == "fugir":
+        fugir_rd = rd.randint(1, 5)
+        if fugir_rd == 1:
+            novo_heroi["status"] = "FUGIU"
+            mensagem_turno = "Você fugiu com sucesso!"
+        else:
+            dano_recebido = novo_heroi["vida"] * 0.10
+            novo_heroi["vida"] -= dano_recebido
+            mensagem_turno = f"Você não conseguiu fugir e foi atingido, perdendo {dano_recebido:.0f} de vida."
+
+    return novo_heroi, novo_vilao, mensagem_turno

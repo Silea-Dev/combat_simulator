@@ -69,4 +69,4 @@ Adiconado sistema de escolha de classes! (17/09/2025)
 
 ## Atualização
 
-``Lore: A história se passa em um mundo paralelo, onde seus status social é definido por sua capacidade de controlar itens chamados de "Peças do tabuleiro real". Nosso prota, ao se perceber neste mundo, percebe que essas peças lembram muito o jogo que muito gostava em seu antigo mundo, xadrez. Este, planeja usar suas habilidades para tentar encontrar uma maneira de voltar para casa e rever sua família.``
+``Lore: A história se passa em um mundo paralelo, onde seus status social é definido por sua capacidade de controlar itens chamados de "Peças do tabuleiro real". Nosso prota (1/prodígio), ao se perceber neste mundo, percebe que essas peças lembram muito o jogo que muito gostava em seu antigo mundo, xadrez. Este, planeja usar suas habilidades para tentar encontrar uma maneira de voltar para casa e rever sua família.``

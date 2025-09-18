@@ -65,3 +65,8 @@ Um novo paradigma, foi adicionado uma `Ficha de Personagem` ao jogo! (13/09/2025
 Adiconado sistema de escolha de classes! (17/09/2025)
 
 ``Versão: V3.0``
+
+
+## Atualização
+
+``Lore: A história se passa em um mundo paralelo, onde seus status social é definido por sua capacidade de controlar itens chamados de "Peças do tabuleiro real". Nosso prota, ao se perceber neste mundo, percebe que essas peças lembram muito o jogo que muito gostava em seu antigo mundo, xadrez. Este, planeja usar suas habilidades para tentar encontrar uma maneira de voltar para casa e rever sua família.``

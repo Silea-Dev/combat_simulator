@@ -54,25 +54,25 @@ Este projeto foi um campo de testes para aplicar e solidificar os seguintes conc
 * **Funções e Passagem de Parâmetros:**
   A lógica principal é encapsulada na função `game()`, que recebe os dados dos combatentes como parâmetros, tornando o código reutilizável e fácil de testar.
 
-## Atualização
+## Atualizações:
+
+### Atualização
 
 Um novo paradigma, foi adicionado uma `Ficha de Personagem` ao jogo! (13/09/2025)
 
 ``Versão: V2.0``
 
-## Atualização
+### Atualização
 
 Adiconado sistema de escolha de classes! (17/09/2025)
 
 ``Versão: V3.0``
 
-
 ## Lore (atualização V3.1)
 
 ``Lore: A história se passa em um mundo paralelo, onde seus status social é definido por sua capacidade de controlar itens chamados de "Peças do tabuleiro real". Nosso prota (1/prodígio), ao se perceber neste mundo, percebe que essas peças lembram muito o jogo que muito gostava em seu antigo mundo, xadrez. Este, planeja usar suas habilidades para tentar encontrar uma maneira de voltar para casa e rever sua família.``
 
-
-### Licenciamento
+## Licenciamento
 
 O código-fonte deste projeto é licenciado sob a  **Licença MIT** , conforme detalhado no arquivo `LICENSE`.
 

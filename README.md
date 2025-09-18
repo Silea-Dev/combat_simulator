@@ -67,6 +67,13 @@ Adiconado sistema de escolha de classes! (17/09/2025)
 ``Versão: V3.0``
 
 
-## Atualização
+## Lore (atualização V3.1)
 
 ``Lore: A história se passa em um mundo paralelo, onde seus status social é definido por sua capacidade de controlar itens chamados de "Peças do tabuleiro real". Nosso prota (1/prodígio), ao se perceber neste mundo, percebe que essas peças lembram muito o jogo que muito gostava em seu antigo mundo, xadrez. Este, planeja usar suas habilidades para tentar encontrar uma maneira de voltar para casa e rever sua família.``
+
+
+### Licenciamento
+
+O código-fonte deste projeto é licenciado sob a  **Licença MIT** , conforme detalhado no arquivo `LICENSE`.
+
+Todos os ativos criativos, incluindo, mas não se limitando a, a história, nomes de personagens, diálogos e descrições do universo, são propriedade intelectual de Isaías Eloy (Silea) e estão protegidos por  **copyright (Todos os Direitos Reservados)** . A reutilização destes ativos em outros projetos requer permissão explícita.

@@ -60,17 +60,23 @@ Este projeto foi um campo de testes para aplicar e solidificar os seguintes conc
 
 Um novo paradigma, foi adicionado uma `Ficha de Personagem` ao jogo! (13/09/2025)
 
-``Versão: V2.0``
+``Versão: V1.1.0``
 
 ### Atualização
 
 Adiconado sistema de escolha de classes! (17/09/2025)
 
-``Versão: V3.0``
+``Versão: V2.0``
 
-## Lore (atualização V3.1)
+### Atualização
 
-``Lore: A história se passa em um mundo paralelo, onde seus status social é definido por sua capacidade de controlar itens chamados de "Peças do tabuleiro real". Nosso prota (1/prodígio), ao se perceber neste mundo, percebe que essas peças lembram muito o jogo que muito gostava em seu antigo mundo, xadrez. Este, planeja usar suas habilidades para tentar encontrar uma maneira de voltar para casa e rever sua família.``
+Lançando aplicativo ``.exe``
+
+``Versão V2.1.1``
+
+## Lore (atualização V2.1.0)
+
+``Lore: A história se passa em um mundo paralelo, onde seus status social é definido por sua capacidade de controlar itens chamados de "Peças do tabuleiro real". Nosso prota (1/prodígio), ao se perceber neste mundo, percebe que essas peças lembram muito o jogo que muito gostava em seu antigo mundo, xadrez. Este, planeja usar suas habilidades para tentar sobreviver neste novo mundo.``
 
 ## Licenciamento
 

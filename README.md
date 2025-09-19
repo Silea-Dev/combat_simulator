@@ -76,7 +76,7 @@ Lançando aplicativo ``.exe``
 
 ## Lore (atualização V2.1.0)
 
-``Lore baseada no livro de minha autoria "O Sequestro do Rei" autor "Isaías Eloy (Silea)":``
+``Lore baseada no livro de minha autoria "Crônicas de Aethely: O Despertar do Forasteiro" autor "Isaías Eloy (Silea)":``
 
 ``A história se passa em um mundo paralelo (Aethey), onde seus status social é definido por sua capacidade de controlar itens chamados de "Peças do tabuleiro real". Nosso prota (Noah), ao se perceber neste mundo, percebe que essas peças lembram muito o jogo que muito gostava em seu antigo mundo, xadrez. Este, planeja usar suas habilidades para tentar sobreviver neste novo mundo.``
 

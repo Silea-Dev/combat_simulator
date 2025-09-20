@@ -9,3 +9,17 @@ venv/
 
 tests/
 teste_core.py
+
+codigo_puro_inicial/
+
+assents/
+
+src
+
+config.py
+
+src/
+__init__.py
+
+games_py/
+main.py

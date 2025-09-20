@@ -1,84 +1,84 @@
-# Combat Simulator
+# Combat Simulator: Crônicas de Aethely
 
-Um mini-jogo de RPG de texto, criado em Python puro, onde um herói customizável enfrenta um vilão pré-definido. O jogo utiliza uma mecânica de turnos e probabilidades para determinar o vencedor da batalha, oferecendo ao jogador opções de ataque, defesa e fuga.
-
-Este projeto foi desenvolvido como um exercício prático para aplicar os conceitos fundamentais de lógica de programação e estrutura de dados.
+Um jogo de RPG de texto imersivo, criado em Python, que transporta os jogadores para o mundo paralelo de Aethely. Baseado na obra "Crônicas de Aethely: O Despertar do Forasteiro" de Isaías Eloy (Silea), o jogo oferece uma experiência autêntica onde os jogadores assumem o papel de Noah, um forasteiro que descobre poderes únicos através das Peças do Tabuleiro Real.
 
 ## Tecnologias Utilizadas
 
 * Python 3
 * Biblioteca nativa: `random`
+* Sistema de compilação: ``PyInstaller``
 
-### Como Rodar o Projeto
+## Como Jogar
 
-1. **Clone o repositório:**
+1. Faça o download
+2. Não existe ameaças, execute ignorando o WD.
+3. Aproveite
 
-   ```bash
-   git clone [https://github.com/Silea-dev/combat_simulator.git](https://github.com/Silea-dev/combat_simulator.git)
-   ```
-2. **Navegue até a pasta do projeto:**
+## O Mundo de Aethely
 
-   ```bash
-   cd combat_simulator
-   ```
-3. **(Opcional, mas recomendado) Crie e ative um ambiente virtual:**
+### Contexto da História
 
-   ```bash
-   # Criar o ambiente
-   python -m venv .venv
+Aethely é um mundo onde o status social é determinado pela capacidade de controlar as "Peças do Tabuleiro Real" - artefatos místicos que concedem poderes extraordinários. Noah, protagonista da história, é transportado para este mundo paralelo e descobre que essas peças funcionam sob regras surpreendentemente similares ao jogo de xadrez que tanto amava em seu mundo original.
 
-   # Ativar no Windows
-   .\.venv\Scripts\activate
+### Sistema de Classes
 
-   # Ativar no Linux/macOS
-   source .venv/bin/activate
-   ```
-4. **Execute o jogo:**
+Cada classe disponível no jogo representa uma diferente aptidão para manipular as Peças do Tabuleiro Real:
 
-   ```bash
-   python main.py
-   ```
+* **Espadachim** (Torre): Especialista em combate corpo a corpo e defesa sólida
+* **Mago** (Bispo): Mestre das artes arcanas e ataques a distância
+* **Arqueiro** (Rainha): Versátil combatente com precisão mortal
+* **Curandeiro** (Rei): Guardião da vida com habilidades de suporte
 
-## Conceitos Praticados
+### Ameaças de Aethely
 
-Este projeto foi um campo de testes para aplicar e solidificar os seguintes conceitos fundamentais de programação e engenharia de software:
+Os jogadores enfrentarão criaturas corrompidas pelo poder das Peças do Tabuleiro Real, incluindo o formidável **Lúcifer** - uma entidade demoníaca que busca distorcer o equilíbrio de Aethely para seus próprios fins sombrios.
 
-* **Estrutura de Repetição (`while`):**
-  Utilizada para controlar o fluxo principal da batalha, que continua executando turno após turno enquanto ambos os combatentes estiverem vivos.
-* **Estrutura de Decisão (`if/elif/else`):**
-  Usada para processar as escolhas do jogador (Atacar, Defender, Fugir) e para determinar os resultados aleatórios de cada ação, criando diferentes desfechos.
-* **Estrutura de Dados Heterogênea (Dicionários):**
-  Os personagens Herói e Vilão são modelados como "Registros", utilizando dicionários para agrupar seus diferentes atributos (nome, vida, ataque, defesa) em uma única entidade.
-* **Modularização de Código:**
-  O código é organizado com uma clara "Separação de Responsabilidades", onde `main.py` cuida da inicialização e da interação com o usuário, enquanto `core.py` contém toda a lógica e as regras do jogo.
-* **Funções e Passagem de Parâmetros:**
-  A lógica principal é encapsulada na função `game()`, que recebe os dados dos combatentes como parâmetros, tornando o código reutilizável e fácil de testar.
+## Conceitos Técnicos Implementados
 
-## Atualizações:
+Este projeto demonstra a aplicação prática de diversos conceitos fundamentais:
 
-### Atualização
+* **Estruturas de Controle:** Implementação de loops `while` para o sistema de turnos e estruturas `if/elif/else` para processamento de decisões
+* **Estruturas de Dados:** Uso de dicionários para modelagem de personagens como entidades complexas
+* **Modularização:** Separação clara entre interface (main.py) e regras de negócio (core.py)
+* **Manipulação de Arquivos:** Sistema de versionamento e registro de progresso
+* **Compilação e Distribuição:** Empacotamento do projeto como executável autônomo
 
-Um novo paradigma, foi adicionado uma `Ficha de Personagem` ao jogo! (13/09/2025)
+## Histórico de Versões
 
-``Versão: V1.1.0``
+### V2.1.1 (Atual)
 
-### Atualização
+* Lançamento da versão executável (.exe)
+* Melhorias de estabilidade e performance
+* Correções de bugs menores
 
-Adiconado sistema de escolha de classes! (17/09/2025)
+### V2.0 (17/09/2025)
 
-``Versão: V2.0``
+* Sistema de escolha de classes implementado
+* Balanceamento de atributos por classe
+* Expansão do sistema de combate
 
-### Atualização
+### V1.1.0 (13/09/2025)
 
-Lançando aplicativo ``.exe``
+* Adição do sistema de Ficha de Personagem
+* Primeira integração com elementos do lore de Aethely
+* Implementação do sistema de progressão
 
-``Versão V2.1.1``
+## Direitos Autorais e Licenciamento
 
-## Lore (atualização V2.1.0)
+### Código-Fonte
 
-``Lore baseada no livro de minha autoria "Crônicas de Aethely: O Despertar do Forasteiro" autor "Isaías Eloy (Silea)":``
+O código-fonte deste projeto é disponibilizado sob a  **Licença MIT** , permitindo uso, modificação e distribuição com atribuição apropriada.
 
-``A história se passa em um mundo paralelo (Aethely), onde seus status social é definido por sua capacidade de controlar itens chamados de "Peças do tabuleiro real". Nosso prota (Noah), ao se perceber neste mundo, percebe que essas peças lembram muito o jogo que muito gostava em seu antigo mundo, xadrez. Este, planeja usar suas habilidades para tentar sobreviver neste novo mundo.``
+### Propriedade Intelectual
+
+Todos os elementos criativos, incluindo mas não limitado a:
+
+* Universo de Aethely e sua mitologia
+* Personagens e suas histórias
+* Elementos narrativos e diálogos
+* Conceitos das Peças do Tabuleiro Real
+
+São propriedade intelectual de **Isaías Eloy (Silea)** e protegidos por  **copyright (Todos os Direitos Reservados)** . A utilização destes elementos em outros projetos requer autorização expressa do autor.
 
 ## Licenciamento
 

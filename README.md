@@ -77,6 +77,7 @@ Todos os elementos criativos, incluindo mas não limitado a:
 * Personagens e suas histórias
 * Elementos narrativos e diálogos
 * Conceitos das Peças do Tabuleiro Real
+* Qualquer trecho retirado ou reinterpretado das “Crônicas de Aethely: O Sequestro do Rei".
 
 São propriedade intelectual de **Isaías Eloy (Silea)** e protegidos por  **copyright (Todos os Direitos Reservados)** . A utilização destes elementos em outros projetos requer autorização expressa do autor.
 
